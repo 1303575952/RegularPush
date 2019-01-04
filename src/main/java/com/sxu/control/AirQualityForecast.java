@@ -2,8 +2,6 @@ package com.sxu.control;
 
 import com.sxu.dao.JDBCDao;
 import com.sxu.data.DateTime;
-import com.sxu.data.EnterpriseName;
-import com.sxu.data.Industry;
 import com.sxu.data.SiteName;
 import com.sxu.util.HttpClientUtil;
 
