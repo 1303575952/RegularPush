@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class AirQualityForecast {
     public static void main(String[] args) throws Exception {
-        new AirQualityForecast().postAirQualityForecastJson("德盛苑", "2018年12月15日", "1");
+        AirQualityForecast.postAirQualityForecastJson("德盛苑", "2018年12月15日", "1");
     }
 
     /**
@@ -22,7 +22,7 @@ public class AirQualityForecast {
      * @param time
      * @throws Exception
      */
-    public void postAirQualityForecastJson(String siteName, String date, String time) throws Exception {
+    public static void postAirQualityForecastJson(String siteName, String date, String time) throws Exception {
         String siteNameShort = SiteName.getSiteNameMap().get(siteName);
         String dateTime = DateTime.getDateTime(date, time);
         Map<String, String> pollutantValueMap = AirQualityForecast.getAirQualityForecastFromDB(siteNameShort, dateTime);

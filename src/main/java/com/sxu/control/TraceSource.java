@@ -2,7 +2,7 @@ package com.sxu.control;
 
 import com.sxu.dao.JDBCDao;
 import com.sxu.data.DateTime;
-import com.sxu.data.EnterpriseName;
+import com.sxu.data.EnterpriseName2Id;
 import com.sxu.data.Industry;
 import com.sxu.data.SiteName;
 import com.sxu.util.HttpClientUtil;
@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class TraceSource {
     public static void main(String[] args) throws Exception {
-        new TraceSource().postTraceSourceJson("德盛苑", "沁源县兴茂煤化有限公司", "2018年12月15日", "1", "电力供热");
+        TraceSource.postTraceSourceJson("德盛苑", "沁源县兴茂煤化有限公司", "2018年12月15日", "1", "电力供热");
     }
 
     /**
@@ -26,9 +26,9 @@ public class TraceSource {
      * @param industry       eg:电力供热
      * @throws Exception
      */
-    public void postTraceSourceJson(String siteName, String enterpriseName, String date, String time, String industry) throws Exception {
+    public static void postTraceSourceJson(String siteName, String enterpriseName, String date, String time, String industry) throws Exception {
         String siteNameShort = SiteName.getSiteNameMap().get(siteName);
-        String enterpriseId = EnterpriseName.getEnterpriseId(enterpriseName);
+        String enterpriseId = EnterpriseName2Id.getEnterpriseId(enterpriseName);
         String dateTime = DateTime.getDateTime(date, time);
         String industryEnglish = Industry.getSiteNameMap().get(industry);
         Map<String, String> pollutantValueMap = TraceSource.getTraceSourceFromDB(siteNameShort, enterpriseId, dateTime, industryEnglish);

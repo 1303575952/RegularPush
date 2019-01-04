@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class WeatherForecast {
     public static void main(String[] args) throws Exception {
-        new WeatherForecast().postWeatherForecastJson("2018年12月20日", "8");
+        WeatherForecast.postWeatherForecastJson("2018年12月20日", "8");
     }
 
     /**
@@ -20,8 +20,7 @@ public class WeatherForecast {
      * @param time
      * @throws Exception
      */
-    public void postWeatherForecastJson(String date, String time) throws Exception {
-        //TODO 两个空格
+    public static void postWeatherForecastJson(String date, String time) throws Exception {
         String dateTime = DateTime.getDateTimeTwoSpace(date, time);
         Map<String, String> weatherValueMap = WeatherForecast.getWeatherForecastDB(dateTime);
         String temp = "0";
