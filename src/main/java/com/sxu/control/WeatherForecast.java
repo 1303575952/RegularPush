@@ -23,27 +23,27 @@ public class WeatherForecast {
     public static void postWeatherForecastJson(String date, String time) throws Exception {
         String dateTime = DateTime.getDateTimeTwoSpace(date, time);
         Map<String, String> weatherValueMap = WeatherForecast.getWeatherForecastDB(dateTime);
-        String temp = "0";
+        String temp = "";
         if (weatherValueMap.get("temp") != null) {
             temp = weatherValueMap.get("temp");
         }
-        String pressure = "0";
+        String pressure = "";
         if (weatherValueMap.get("pressure") != null) {
             pressure = weatherValueMap.get("pressure");
         }
-        String rh = "0";
+        String rh = "";
         if (weatherValueMap.get("rh") != null) {
             rh = weatherValueMap.get("rh");
         }
-        String windSpeed = "0";
+        String windSpeed = "";
         if (weatherValueMap.get("windSpeed") != null) {
             windSpeed = weatherValueMap.get("windSpeed");
         }
-        String windDirection = "0";
+        String windDirection = "";
         if (weatherValueMap.get("windDirection") != null) {
             windDirection = weatherValueMap.get("windDirection");
         }
-        String totalCloudCover = "0";
+        String totalCloudCover = "";
         if (weatherValueMap.get("totalCloudCover") != null) {
             totalCloudCover = weatherValueMap.get("totalCloudCover");
         }

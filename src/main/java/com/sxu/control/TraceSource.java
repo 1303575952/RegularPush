@@ -32,15 +32,15 @@ public class TraceSource {
         String dateTime = DateTime.getDateTime(date, time);
         String industryEnglish = Industry.getSiteNameMap().get(industry);
         Map<String, String> pollutantValueMap = TraceSource.getTraceSourceFromDB(siteNameShort, enterpriseId, dateTime, industryEnglish);
-        String PM2_5 = "0";
+        String PM2_5 = "";
         if (pollutantValueMap.get("PM2_5") != null) {
             PM2_5 = pollutantValueMap.get("PM2_5");
         }
-        String SO2 = "0";
+        String SO2 = "";
         if (pollutantValueMap.get("SO2") != null) {
             SO2 = pollutantValueMap.get("SO2");
         }
-        String NO2 = "0";
+        String NO2 = "";
         if (pollutantValueMap.get("NO2") != null) {
             NO2 = pollutantValueMap.get("NO2");
         }

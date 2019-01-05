@@ -26,31 +26,31 @@ public class AirQualityForecast {
         String siteNameShort = SiteName.getSiteNameMap().get(siteName);
         String dateTime = DateTime.getDateTime(date, time);
         Map<String, String> pollutantValueMap = AirQualityForecast.getAirQualityForecastFromDB(siteNameShort, dateTime);
-        String PM2_5 = "0";
+        String PM2_5 = "";
         if (pollutantValueMap.get("PM2_5") != null) {
             PM2_5 = pollutantValueMap.get("PM2_5");
         }
-        String PM10 = "0";
+        String PM10 = "";
         if (pollutantValueMap.get("PM10") != null) {
             PM10 = pollutantValueMap.get("PM10");
         }
-        String SO2 = "0";
+        String SO2 = "";
         if (pollutantValueMap.get("SO2") != null) {
             SO2 = pollutantValueMap.get("SO2");
         }
-        String NO2 = "0";
+        String NO2 = "";
         if (pollutantValueMap.get("NO2") != null) {
             NO2 = pollutantValueMap.get("NO2");
         }
-        String CO = "0";
+        String CO = "";
         if (pollutantValueMap.get("CO") != null) {
             CO = pollutantValueMap.get("CO");
         }
-        String O3 = "0";
+        String O3 = "";
         if (pollutantValueMap.get("O3") != null) {
             O3 = pollutantValueMap.get("O3");
         }
-        String AQI = "0";
+        String AQI = "";
         if (pollutantValueMap.get("AQI") != null) {
             AQI = pollutantValueMap.get("AQI");
         }
